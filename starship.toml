@@ -1,0 +1,180 @@
+format = """\
+[╭╴](fg:arrow)\
+$username\
+$directory\
+(\
+    $git_branch\
+)\
+(\
+    $c\
+    $rust\
+    $golang\
+    $nodejs\
+    $php\
+    $java\
+    $kotlin\
+    $haskell\
+    $python\
+    $conda\
+    $nodejs\
+)\
+$cmd_duration
+[╰─](fg:arrow)$character\
+"""
+
+# Disables the blank line at the start of the prompt
+add_newline = true
+
+# Palettes:d
+# To change the colors: change to the corresponding palette.
+palette = "normal"
+
+
+[palettes.normal]
+arrow = "#fefcfb"
+os = "#3778BF"
+os_admin = "#0077b6"
+directory = "#0C73F9"
+node = "green"
+time = "#177E89"
+git = "#00b4d8"
+git_status = "#0077b6"
+python = "#3776AB"
+conda = "#3EB049"
+java = "#861215"
+rust = "#C33C00"
+c = "#4361ee"
+duration = "#0466c8"
+text_color = "#EDF2F4"
+text_light = "#EDF2F4"
+
+[username]
+style_user = 'os'
+style_root = 'os_admin'
+format = '[]($style)[󰣇 $user](bg:$style fg:text_color)[]($style)'
+disabled = false
+show_always = true
+
+[character]
+success_symbol = "[󰍟](fg:arrow)"
+error_symbol = "[󰍟](fg:arrow)"
+
+[directory]
+format = " [](fg:directory)[  $path ]($style)[$read_only]($read_only_style)[](fg:directory)"
+truncation_length = 2
+style = "fg:text_color bg:directory"
+read_only_style = "fg:text_color bg:directory"
+before_repo_root_style = "fg:text_color bg:directory"
+truncation_symbol = "…/"
+truncate_to_repo = true
+read_only ="  "
+
+#[time]
+#disabled = false
+#format = " [](fg:time)[ $time]($style)[](fg:time)"
+#time_format = "%H:%M"
+#style = "fg:text_color bg:time"
+
+[cmd_duration]
+format = " [](fg:duration)[ $duration]($style)[](fg:duration)"
+style = "fg:text_light bg:duration"
+min_time = 500
+
+[git_branch]
+format = " [](fg:git)[$symbol$branch](fg:text_light bg:git)[](fg:git)"
+symbol = " "
+
+[git_status]
+format = '([ ](fg:git_status)[ $all_status$ahead_behind ]($style)[](fg:git_status))'
+style = "fg:text_light bg:git_status"
+
+[package]
+disabled=true
+
+[nodejs]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+
+[c]
+format = "[ ](fg:c)[$symbol$version](bg:c fg:text_color)[](fg:c)"
+version_format = "${raw}"
+symbol = " "
+
+[rust]
+format = "[ ](fg:rust)[$symbol$version](bg:rust fg:text_color)[](fg:rust)"
+version_format = "${raw}"
+symbol = " "
+
+[golang]
+format = "[ ](fg:node)[$symbol$version](bg:node fg:text_color)[](fg:node)"
+version_format = "${raw}"
+symbol = " "
+
+[php]
+format = "[ ](fg:directory)[$symbol$version](bg:directory fg:text_color)[](fg:directory)"
+version_format = "${raw}"
+symbol = " "
+
+[java]
+format = "[ ](fg:java)[$symbol$version](bg:java fg:text_color)[](fg:java)"
+version_format = "${raw}"
+symbol = " "
+
+[kotlin]
+format = "[ ](fg:java)[$symbol$version](bg:java fg:text_color)[](fg:java)"
+version_format = "${raw}"
+symbol = " "
+
+[haskell]
+format = "[ ](fg:directory)[$symbol$version](bg:directory fg:text_color)[](fg:directory)"
+version_format = "${raw}"
+symbol = " "
+
+[python]
+format = "[ ](fg:python)[$symbol$version(\\(#$virtualenv\\))](bg:python fg:text_color)[](fg:python)"
+version_format = "${raw}"
+symbol = " "
+
+[docker_context]
+symbol = ""
+style = "bg:sapphire"
+format = '[[ $symbol( $context) ](fg:crust bg:sapphire)]($style)'
+
+[conda]
+symbol = "  "
+style = "fg:crust bg:sapphire"
+format = '[$symbol$environment ]($style)'
+ignore_base = false
+
+[os.symbols]
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Gentoo = " "
+Linux = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+openSUSE = " "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = " "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Windows = " "
