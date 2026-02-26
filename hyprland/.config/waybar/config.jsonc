@@ -1,0 +1,164 @@
+{
+    // sourced from header module //
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "margin-left": 20,
+    "margin-right": 20,
+    "margin-top": 7,
+    "margin-bottom": 0,
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "reload_style_on_change": true,
+
+    "modules-left": [
+        "custom/padd",
+        "custom/arch",      // Logo do Arch com Power Menu
+        "custom/smallspacer",
+        "hyprland/workspaces", 
+        "custom/padd"
+    ],
+
+    "modules-center": [
+        "clock"
+    ],
+
+    "modules-right": [
+        "custom/padd",
+        "custom/l_end",
+        "group/expand",     // Tray e Menu
+        "network",
+        "group/expand-3",   // Audio Slider
+        "group/expand-2",   // Backlight Slider
+        "group/expand-4",   // Bateria/Headset
+        "memory",           // Seus ícones verticais originais
+        "cpu",              // Seus ícones verticais originais
+        "custom/notification",
+        "custom/padd"
+    ],
+
+    // --- MÓDULO LOGO ARCH (POWER MENU) ---
+    "custom/arch": {
+        "format": "󰣇",
+        "on-click": "wlogout",
+        "tooltip": false
+    },
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "default": "",
+            "active": ""
+        }
+    },
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "rotate": 0,
+        "on-click": "/usr/local/bin/ags -t ActivityCenter",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "month",
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b>{}</b></span>"
+            }
+        }
+    },
+
+    "memory": {
+        "interval": 1,
+        "rotate": 270,
+        "format": "{icon}",
+        "format-icons": ["󰝦","󰪞","󰪟","󰪠","󰪡","󰪢","󰪣","󰪤","󰪥"],
+        "max-length": 10
+    },
+
+    "cpu": {
+        "interval": 1,
+        "format": "{icon}",
+        "rotate": 270,
+        "format-icons": ["󰝦","󰪞","󰪟","󰪠","󰪡","󰪢","󰪣","󰪤","󰪥"]
+    },
+
+    "network": {
+        "format-wifi": "{icon} ",
+        "format-icons": ["󰤟", "󰤢", "󰤥"],
+        "format-ethernet": "󰈀 ",
+        "format-disconnected": " ",
+        "on-click": "/usr/local/bin/ags -t ControlPanel",
+        "interval": 2
+    },
+
+    // --- GRUPOS DE EXPANSÃO (DRAWERS) ---
+
+    "group/expand-4": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 600,
+            "children-class": "not-power",
+            "transition-to-left": true,
+            "click-to-reveal": true
+        },
+        "modules": ["battery", "upower", "upower#headset"]
+    },
+
+    "battery": {
+        "states": { "good": 95, "warning": 30, "critical": 20 },
+        "format": "{icon}",
+        "format-icons": ["󰝦","󰪞","󰪟","󰪠","󰪡","󰪢","󰪣","󰪤","󰪥"]
+    },
+
+    "group/expand-2": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 600,
+            "transition-to-left": true,
+            "click-to-reveal": true
+        },
+        "modules": ["backlight", "backlight/slider", "custom/led"]
+    },
+
+    "group/expand-3": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 600,
+            "transition-to-left": true,
+            "click-to-reveal": true
+        },
+        "modules": ["pulseaudio", "pulseaudio/slider"]
+    },
+
+    "group/expand": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 600,
+            "transition-to-left": true
+        },
+        "modules": ["custom/menu", "custom/spacer", "tray"]
+    },
+
+    // Módulos de suporte
+    "custom/menu": { "format": "󰅃", "rotate": 90 },
+    "custom/spacer": { "format": "|" },
+    "custom/smallspacer": { "format": " " },
+    "custom/padd": { "format": "  ", "interval": "once", "tooltip": false },
+    "custom/l_end": { "format": " ", "interval": "once", "tooltip": false },
+
+    // Configurações de Sliders e Tray
+    "backlight": { "format": "{icon}", "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"] },
+    "backlight/slider": { "min": 5, "max": 100 },
+    "pulseaudio": { "format": "{icon}", "format-icons": { "default": ["", "", ""] } },
+    "pulseaudio/slider": { "min": 5, "max": 100 },
+    "tray": { "icon-size": 16, "spacing": 3 },
+
+    "custom/notification": {
+        "format": "{icon}",
+        "format-icons": { "notification": "󰅸", "none": "󰂜" },
+        "return-type": "json",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "escape": true
+    }
+}
