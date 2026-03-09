@@ -1,0 +1,35 @@
+# Hyprland
+[config]
+
+[templates.hyprland]
+input_path = "~/.config/matugen/templates/hyprland.conf"
+output_path = "~/.config/hypr/components/colors.conf"
+
+[templates.nvim]
+input_path = "~/.config/matugen/templates/nvim.lua"
+output_path = "~/.config/nvim/lua/config/matugen.lua"
+post_hook = "~/.config/nvim/update_nvim.sh"
+
+[templates.starship]
+input_path = "~/.config/matugen/templates/starship.toml"
+output_path = "~/.config/starship.toml"
+post_hook = "~/.config/starship/repaint_starship.sh"
+
+[templates.pywalfox]
+input_path = "~/.config/matugen/templates/pywalfox.json"
+output_path = '~/.cache/wal/colors.json'
+post_hook = 'pywalfox update'
+
+[templates.snappy]
+input_path = "~/.config/matugen/templates/snappy.toml"
+output_path = "~/.config/snappy-switcher/themes/colors.ini"
+post_hook = "~/.config/snappy-switcher/update_snappy.sh"
+
+[templates.cava]
+input_path = '~/.config/matugen/templates/cava.ini'
+output_path = '~/.config/cava/themes/colorstheme'
+
+#[templates.wlogout]
+#input_path = "~/.config/noctalia/templates/wlogout.css"
+#output_path = "~/.config/wlogout/colors.css"
+#post_hook = "~/.config/wlogout/update_icons.sh"

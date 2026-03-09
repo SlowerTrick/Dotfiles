@@ -1,0 +1,22 @@
+{
+    "label" : "shutdown",
+    "action" : "systemctl poweroff",
+    "keybind" : "s"
+}
+{
+    "label" : "reboot",
+    "action" : "systemctl reboot",
+    "keybind" : "r"
+}
+{
+    "label" : "lock",
+    "action" : "qs -c 'noctalia-shell' ipc call lockScreen lock",
+    "keybind" : "l"
+}
+{
+    "label" : "logout",
+    "action" : "hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit",
+    "keybind" : "e"
+}
+
+

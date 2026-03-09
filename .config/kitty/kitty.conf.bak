@@ -1,0 +1,31 @@
+# Import colors
+include colors.conf
+
+# Font
+font_family JetBrains Mono Nerd Font
+font_size 10
+
+# Kitty specifics
+disable_ligatures always
+disable_ligaturs no
+enable_audio_bell no
+remember_window_size no
+cursor_blink_interval 0
+
+# Background and window
+window_padding_width 8
+scrollbar_handle_opacity 0
+scrollbar_track_opacity 0
+scrollbar_track_hover_opacity 0
+confirm_os_window_close 0
+background_opacity 0.85
+dynamic_background_opacity yes
+
+# Cursor
+cursor_trail 1
+cursor_shape block
+
+# Mouse
+url_style curly
+open_url_with default
+copy_on_select yes
