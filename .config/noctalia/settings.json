@@ -800,9 +800,9 @@
                 "darkMode": true,
                 "generationMethod": "tonal-spot",
                 "paletteColors": [
-                    "#5adbc0",
-                    "#b1ccc3",
-                    "#aacbe4",
+                    "#ffb4a3",
+                    "#e7bdb3",
+                    "#dac58c",
                     "#ffb4ab"
                 ],
                 "path": "/home/slower/Pictures/Wallpapers/Grüner-Mast.png",
@@ -819,6 +819,58 @@
                     "#ffb4ab"
                 ],
                 "path": "/home/slower/Pictures/Wallpapers/wp8968814-space-4k-firewatch-wallpapers.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Ayu",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#e3c54a",
+                    "#d2c6a1",
+                    "#aad0b2",
+                    "#ffb4ab"
+                ],
+                "path": "/home/slower/Pictures/Wallpapers/Yellow1.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Ayu",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#cec49a",
+                    "#cac5bb",
+                    "#c2c6c4",
+                    "#ffb4ab"
+                ],
+                "path": "/home/slower/Pictures/Wallpapers/Blue1.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Ayu",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#5adbc0",
+                    "#b1ccc3",
+                    "#aacbe4",
+                    "#ffb4ab"
+                ],
+                "path": "/home/slower/Pictures/Wallpapers/Green1.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Ayu",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#feb4a2",
+                    "#e6bdb2",
+                    "#d9c58c",
+                    "#ffb4ab"
+                ],
+                "path": "/home/slower/Pictures/Wallpapers/Red1.png",
                 "useWallpaperColors": true
             }
         ],
