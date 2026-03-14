@@ -1,3 +1,3 @@
-#!/usr/bin/env bash
+#!/usr/bin/fish
 
 pkill -USR1 fish

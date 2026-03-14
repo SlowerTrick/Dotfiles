@@ -26,9 +26,13 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
-vim.api.nvim_create_user_command("ReloadMatugen", function()
-    package.loaded["config.matugen"] = nil
-    local palette = require("config.matugen").colors
-    require("base16-colorscheme").setup(palette)
-    require("config.transparent").apply()
-end, {})
+-- Fix Undefined global 'vim'
+vim.lsp.config("lua_ls", {
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { "vim" }
+            }
+        }
+    }
+})

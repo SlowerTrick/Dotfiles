@@ -175,7 +175,7 @@
                     "iconColor": "primary",
                     "id": "Volume",
                     "middleClickCommand": "pwvucontrol || pavucontrol",
-                    "textColor": "none"
+                    "textColor": "primary"
                 },
                 {
                     "displayMode": "onhover",
@@ -747,6 +747,10 @@
             {
                 "enabled": true,
                 "id": "kcolorscheme"
+            },
+            {
+                "enabled": true,
+                "id": "yazi"
             }
         ],
         "enableUserTheming": false
@@ -872,6 +876,58 @@
                 ],
                 "path": "/home/slower/Pictures/Wallpapers/Red1.png",
                 "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Ayu",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#e3c54a",
+                    "#d2c6a1",
+                    "#aad0b2",
+                    "#ffb4ab"
+                ],
+                "path": "/home/slower/Pictures/Wallpapers/yellow1.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Ayu",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#5adbc0",
+                    "#b1ccc3",
+                    "#aacbe4",
+                    "#ffb4ab"
+                ],
+                "path": "/home/slower/Pictures/Wallpapers/green1.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Ayu",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#b5c4ff",
+                    "#c1c5dd",
+                    "#e2bbdb",
+                    "#ffb4ab"
+                ],
+                "path": "/home/slower/Pictures/Wallpapers/blue1.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Ayu",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#ffb4a3",
+                    "#e7bdb3",
+                    "#dac58c",
+                    "#ffb4ab"
+                ],
+                "path": "/home/slower/Pictures/Wallpapers/red1.png",
+                "useWallpaperColors": true
             }
         ],
         "fillColor": "#000000",
@@ -888,13 +944,13 @@
         "showHiddenFiles": false,
         "skipStartupTransition": false,
         "solidColor": "#fff0f5",
-        "sortOrder": "name",
+        "sortOrder": "name_desc",
         "transitionDuration": 1500,
         "transitionEdgeSmoothness": 0.05,
         "transitionType": "random",
         "useSolidColor": false,
         "useWallhaven": false,
-        "viewMode": "single",
+        "viewMode": "recursive",
         "wallhavenApiKey": "",
         "wallhavenCategories": "111",
         "wallhavenOrder": "desc",

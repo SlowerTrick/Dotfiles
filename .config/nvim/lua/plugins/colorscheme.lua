@@ -69,24 +69,9 @@ return {
         end,
     },
     {
-        "RRethy/base16-nvim",
-        lazy = true,
-    },
-    {
         "LazyVim/LazyVim",
         opts = {
-            colorscheme = function()
-                local palette = require("config.matugen").colors
-                require("base16-colorscheme").setup(palette)
-                require("config.transparent").apply()
-            end,
+            colorscheme = "tokyonight",
         },
-    }
-    --{
-    --    "LazyVim/LazyVim",
-    --    opts = {
-    --        -- colorscheme = function() end, -- Disable LazyVim's colorscheme
-    --        colorscheme = "tokyonight",
-    --    },
-    --}
+    },
 }

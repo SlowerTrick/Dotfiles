@@ -1,6 +1,4 @@
-local M = {}
-
-M.colors = {
+local pallete = {
   base00 = "{{colors.surface_dim.default.hex}}",
   base01 = "{{colors.surface.default.hex}}",
   base02 = "{{colors.surface_container.default.hex}}",
@@ -22,4 +20,4 @@ M.colors = {
   base0F = "{{colors.outline.default.hex}}",
 }
 
-return M
+return pallete

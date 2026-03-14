@@ -3,6 +3,7 @@ return {
     opts = {
         open_mapping = [[<c-t>]],
         direction = "float",
+        shell = "fish",
     },
     version = "*",
 }

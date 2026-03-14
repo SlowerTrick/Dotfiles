@@ -7,6 +7,9 @@ local opts = { noremap = true, silent = true }
 
 -- Delete single character without copying into register
 vim.keymap.set("n", "x", '"_x', opts)
+vim.keymap.set({ "n", "v" }, "<leader>d", '"_d', opts)
+vim.keymap.set({ "n", "v" }, "<leader>c", '"_c', opts)
+vim.keymap.set({ "n", "v" }, "<leader>p", '"_dP', opts)
 
 -- Vertical scroll and center
 vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)

@@ -17,6 +17,8 @@ fi
 
 # Generate color scheme
 matugen image "$CURRENT_WALL" -t scheme-tonal-spot # --show-colors
+
+# Cava
 for pid in $(pgrep cava); do
     if pstree -s "$pid" | grep -q "kitty"; then
         kill -SIGUSR1 "$pid"

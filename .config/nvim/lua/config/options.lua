@@ -28,6 +28,8 @@ vim.o.showtabline = 2 -- Always show tabs (default: 1)
 vim.o.backup = false -- Creates a backup file (default: false)
 vim.o.undofile = true -- Save undo history (default: false)
 
+vim.g.base16_transparent_background = 1
+
 -- vim.opt.termguicolors = true
 -- vim.cmd.colorscheme = nil
 -- vim.opt.termguicolors = false
