@@ -1,5 +1,3 @@
-#!/bin/bash
-
-killall -9 qs
-sleep 1
-qs -c noctalia-shell &
+pgrep easyeffects > /dev/null || flatpak run com.github.wwmm.easyeffects --service-mode &
+qs -c overview &
+qs -c qs-hyprview &

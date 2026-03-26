@@ -57,12 +57,8 @@
       "title": "TERMINAL SHORTCUTS",
       "binds": [
         {
-          "keys": "Super + T",
-          "desc": "Terminal"
-        },
-        {
           "keys": "Ctrl + Alt + T",
-          "desc": "Terminal (Alt)"
+          "desc": "Terminal (Home)"
         }
       ]
     },
@@ -109,6 +105,10 @@
         {
           "keys": "Super + C",
           "desc": "Center window"
+        },
+        {
+          "keys": "Super + TAB",
+          "desc": "Overview"
         },
         {
           "keys": "Alt + TAB",

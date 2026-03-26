@@ -8,7 +8,9 @@
         "customLaunchPrefixEnabled": false,
         "density": "comfortable",
         "enableClipPreview": true,
+        "enableClipboardChips": true,
         "enableClipboardHistory": true,
+        "enableClipboardSmartIcons": true,
         "enableSessionSearch": true,
         "enableSettingsSearch": true,
         "enableWindowsSearch": true,
@@ -17,9 +19,14 @@
         "overviewLayer": false,
         "pinnedApps": [
             "firefox",
-            "com.discordapp.Discord",
             "brave-cinhimbnkkaeohfgghhklpknlkffjgod-Default",
-            "org.kde.dolphin"
+            "com.discordapp.Discord",
+            "discord",
+            "yazi",
+            "nvim",
+            "org.kde.plasma-systemmonitor",
+            "obsidian",
+            "org.gnome.World.PikaBackup"
         ],
         "position": "top_center",
         "screenshotAnnotationTool": "",
@@ -27,8 +34,7 @@
         "showIconBackground": false,
         "sortByMostUsed": true,
         "terminalCommand": "kitty -e",
-        "useApp2Unit": false,
-        "viewMode": "list"
+        "viewMode": "grid"
     },
     "audio": {
         "mprisBlacklist": [
@@ -51,6 +57,7 @@
         "contentPadding": 2,
         "density": "comfortable",
         "displayMode": "always_visible",
+        "enableExclusionZoneInset": true,
         "floating": false,
         "fontScale": 1,
         "frameRadius": 12,
@@ -108,17 +115,18 @@
                     "focusedColor": "primary",
                     "followFocusedScreen": false,
                     "fontWeight": "bold",
-                    "groupedBorderOpacity": 1,
+                    "groupedBorderOpacity": 0.5,
                     "hideUnoccupied": false,
-                    "iconScale": 0.8,
+                    "iconScale": 0.9,
                     "id": "Workspace",
                     "labelMode": "none",
                     "occupiedColor": "tertiary",
                     "pillSize": 0.6,
-                    "showApplications": false,
+                    "showApplications": true,
+                    "showApplicationsHover": true,
                     "showBadge": true,
                     "showLabelsOnlyWhenOccupied": true,
-                    "unfocusedIconsOpacity": 1
+                    "unfocusedIconsOpacity": 0.5
                 },
                 {
                     "compactMode": true,
@@ -171,14 +179,14 @@
                     "visualizerType": "wave"
                 },
                 {
-                    "displayMode": "onhover",
+                    "displayMode": "alwaysHide",
                     "iconColor": "primary",
                     "id": "Volume",
                     "middleClickCommand": "pwvucontrol || pavucontrol",
                     "textColor": "primary"
                 },
                 {
-                    "displayMode": "onhover",
+                    "displayMode": "alwaysHide",
                     "iconColor": "primary",
                     "id": "Network",
                     "textColor": "none"
@@ -204,41 +212,6 @@
                     "id": "plugin:privacy-indicator"
                 },
                 {
-                    "defaultSettings": {
-                        "autoStartBreaks": false,
-                        "autoStartWork": false,
-                        "longBreakDuration": 15,
-                        "sessionsBeforeLongBreak": 4,
-                        "shortBreakDuration": 5,
-                        "workDuration": 25
-                    },
-                    "id": "plugin:pomodoro"
-                },
-                {
-                    "defaultSettings": {
-                        "autoHeight": true,
-                        "cheatsheetData": [
-                        ],
-                        "columnCount": 3,
-                        "detectedCompositor": "",
-                        "hyprlandConfigPath": "~/.config/hypr/hyprland.conf",
-                        "modKeyVariable": "$mod",
-                        "niriConfigPath": "~/.config/niri/config.kdl",
-                        "windowHeight": 0,
-                        "windowWidth": 1400
-                    },
-                    "id": "plugin:keybind-cheatsheet"
-                },
-                {
-                    "defaultSettings": {
-                        "currentIconName": "world-download",
-                        "hideOnZero": false,
-                        "updateIntervalMinutes": 30,
-                        "updateTerminalCommand": "foot -e"
-                    },
-                    "id": "plugin:update-count"
-                },
-                {
                     "blacklist": [
                     ],
                     "chevronColor": "primary",
@@ -248,6 +221,15 @@
                     "id": "Tray",
                     "pinned": [
                     ]
+                },
+                {
+                    "defaultSettings": {
+                        "currentIconName": "world-download",
+                        "hideOnZero": false,
+                        "updateIntervalMinutes": 30,
+                        "updateTerminalCommand": "foot -e"
+                    },
+                    "id": "plugin:update-count"
                 },
                 {
                     "colorizeDistroLogo": false,
@@ -402,6 +384,7 @@
     "desktopWidgets": {
         "enabled": true,
         "gridSnap": true,
+        "gridSnapScale": false,
         "monitorWidgets": [
             {
                 "name": "HDMI-A-1",
@@ -428,15 +411,17 @@
         "indicatorColor": "primary",
         "indicatorOpacity": 0.6,
         "indicatorThickness": 3,
+        "launcherIcon": "",
         "launcherIconColor": "primary",
         "launcherPosition": "end",
+        "launcherUseDistroLogo": false,
         "monitors": [
         ],
         "onlySameOutput": true,
         "pinnedApps": [
             "firefox",
-            "kitty",
-            "brave-cinhimbnkkaeohfgghhklpknlkffjgod-Default"
+            "brave-cinhimbnkkaeohfgghhklpknlkffjgod-Default",
+            "kitty"
         ],
         "pinnedStatic": true,
         "position": "bottom",
@@ -510,6 +495,7 @@
         "telemetryEnabled": false
     },
     "hooks": {
+        "colorGeneration": "",
         "darkModeChange": "",
         "enabled": true,
         "performanceModeDisabled": "",
@@ -517,8 +503,8 @@
         "screenLock": "",
         "screenUnlock": "",
         "session": "",
-        "startup": "pgrep easyeffects > /dev/null || flatpak run com.github.wwmm.easyeffects --service-mode &",
-        "wallpaperChange": "~/.config/scripts/setup_colors.sh"
+        "startup": "/home/slower/.config/noctalia/launch.sh",
+        "wallpaperChange": "matugen image $1 -t scheme-tonal-spot --source-color-index 0 -q\n"
     },
     "idle": {
         "customCommands": "[]",
@@ -556,8 +542,8 @@
         "bluetoothRssiPollIntervalMs": 60000,
         "bluetoothRssiPollingEnabled": false,
         "disableDiscoverability": false,
-        "networkPanelView": "wifi",
-        "wifiDetailsViewMode": "grid",
+        "networkPanelView": "ethernet",
+        "wifiDetailsViewMode": "list",
         "wifiEnabled": true
     },
     "nightLight": {
@@ -621,7 +607,8 @@
         "overlayLayer": true
     },
     "plugins": {
-        "autoUpdate": true
+        "autoUpdate": true,
+        "notifyUpdates": true
     },
     "sessionMenu": {
         "countdownDuration": 3000,
@@ -690,7 +677,7 @@
         "showHeader": true,
         "showKeybinds": true
     },
-    "settingsVersion": 57,
+    "settingsVersion": 59,
     "systemMonitor": {
         "batteryCriticalThreshold": 5,
         "batteryWarningThreshold": 20,
@@ -763,9 +750,11 @@
         "fontFixedScale": 1,
         "panelBackgroundOpacity": 0.93,
         "panelsAttachedToBar": true,
+        "scrollbarAlwaysVisible": true,
         "settingsPanelMode": "attached",
         "settingsPanelSideBarCardStyle": false,
-        "tooltipsEnabled": true
+        "tooltipsEnabled": true,
+        "translucentWidgets": false
     },
     "wallpaper": {
         "automationEnabled": true,
@@ -908,19 +897,6 @@
                 "darkMode": true,
                 "generationMethod": "tonal-spot",
                 "paletteColors": [
-                    "#b5c4ff",
-                    "#c1c5dd",
-                    "#e2bbdb",
-                    "#ffb4ab"
-                ],
-                "path": "/home/slower/Pictures/Wallpapers/blue1.jpg",
-                "useWallpaperColors": true
-            },
-            {
-                "colorScheme": "Ayu",
-                "darkMode": true,
-                "generationMethod": "tonal-spot",
-                "paletteColors": [
                     "#ffb4a3",
                     "#e7bdb3",
                     "#dac58c",
@@ -928,12 +904,30 @@
                 ],
                 "path": "/home/slower/Pictures/Wallpapers/red1.png",
                 "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Ayu",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#96cbff",
+                    "#b9c8da",
+                    "#d3bfe6",
+                    "#ffb4ab"
+                ],
+                "path": "/home/slower/Pictures/Wallpapers/blue2.png",
+                "useWallpaperColors": true
             }
         ],
         "fillColor": "#000000",
         "fillMode": "crop",
-        "hideWallpaperFilenames": false,
+        "hideWallpaperFilenames": true,
         "monitorDirectories": [
+            {
+                "directory": "/home/slower/Pictures/Wallpapers",
+                "name": "HDMI-A-1",
+                "wallpaper": ""
+            }
         ],
         "overviewBlur": 0.4,
         "overviewEnabled": false,
@@ -947,10 +941,17 @@
         "sortOrder": "name_desc",
         "transitionDuration": 1500,
         "transitionEdgeSmoothness": 0.05,
-        "transitionType": "random",
+        "transitionType": [
+            "fade",
+            "disc",
+            "stripes",
+            "wipe",
+            "pixelate",
+            "honeycomb"
+        ],
         "useSolidColor": false,
         "useWallhaven": false,
-        "viewMode": "recursive",
+        "viewMode": "browse",
         "wallhavenApiKey": "",
         "wallhavenCategories": "111",
         "wallhavenOrder": "desc",

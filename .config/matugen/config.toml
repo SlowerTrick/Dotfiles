@@ -5,25 +5,35 @@
 input_path = "~/.config/matugen/templates/hyprland.conf"
 output_path = "~/.config/hypr/components/colors.conf"
 
-
 [templates.starship]
 input_path = "~/.config/matugen/templates/starship.toml"
 output_path = "~/.config/starship.toml"
-post_hook = "~/.config/starship/repaint_starship.sh"
+post_hook = "pkill -USR1 fish"
 
 [templates.pywalfox]
 input_path = "~/.config/matugen/templates/pywalfox.json"
-output_path = '~/.cache/wal/colors.json'
-post_hook = 'pywalfox update'
-
-[templates.snappy]
-input_path = "~/.config/matugen/templates/snappy.toml"
-output_path = "~/.config/snappy-switcher/themes/colors.ini"
-post_hook = "~/.config/snappy-switcher/update_snappy.sh"
+output_path = "~/.cache/wal/colors.json"
+post_hook = "pywalfox update"
 
 [templates.cava]
 input_path = '~/.config/matugen/templates/cava.ini'
-output_path = '~/.config/cava/themes/colorstheme'
+output_path = "~/.config/cava/themes/colors"
+post_hook = "ps -C cava -o pid=,tty= | awk '$2!=\"tty1\"{print $1}' | xargs -r kill -SIGUSR2"
+
+[templates.fzf]
+input_path = "~/.config/matugen/templates/fzf.sh"
+output_path = "~/.config/fzf/matugen-fzf.sh"
+post_hook= "fish ~/.config/fish/conf.d/fzf.fish"
+
+[templates.quickshell_overview]
+input_path  = "~/.config/matugen/templates/quickshell-overview.qml"
+output_path = "~/.config/quickshell/overview/common/Appearance.colors.qml"
+post_hook= "~/.config/quickshell/reset-qs.sh;"
+
+
+[templates.qs-hyprview]
+input_path  = "~/.config/matugen/templates/qs-hyprview-template.qml"
+output_path = "~/.config/quickshell/qs-hyprview/common/Appearance.qml"
 
 #[templates.nvim]
 #input_path = "~/.config/matugen/templates/nvim.lua"

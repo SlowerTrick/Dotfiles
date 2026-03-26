@@ -1,3 +1,4 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR FZF_DEFAULT_OPTS:\x1d
 SETUVAR __fish_initialized:4300
