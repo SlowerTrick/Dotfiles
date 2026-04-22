@@ -7,7 +7,7 @@ if status is-interactive
     zoxide init fish | source
 end
 
-# Vscode and neovim pokemon-colorscripts block
-if not set -q VSCODE_IPC_HOOK; and test "$TERM_PROGRAM" != "vscode"; and not set -q NVIM
+# Pokemon-colorscripts block
+if not set -q VSCODE_IPC_HOOK; and test "$TERM_PROGRAM" != "vscode"; and not set -q NVIM; and not set -q TMUX
     ~/.config/fastfetch/fastfetch_pokemon.sh
 end

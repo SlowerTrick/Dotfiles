@@ -1,7 +1,7 @@
 {
   "zoomAmount": 1,
   "parallaxDirection": "horizontal",
-  "hParallaxAmount": 10,
+  "hParallaxAmount": 20,
   "hParallaxDuration": 300,
   "vParallaxAmount": 11,
   "vParallaxDuration": 300,

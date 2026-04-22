@@ -11,67 +11,46 @@ return {
     },
 
     {
-        "samharju/synthweave.nvim",
-        lazy = false,
+        "catppuccin/nvim",
+        opts = {
+            name = "catppuccin",
+            flavour = "auto",
+            priority = 1000,
+            transparent_background = true,
+            float = {
+                transparent = true,
+            },
+        }
     },
 
-    { "rebelot/kanagawa.nvim" },
     {
-        "catppuccin/nvim",
-        name = "catppuccin",
+        "ellisonleao/gruvbox.nvim",
         priority = 1000,
+        config = true,
         opts = {
-            term_colors = true,
-            transparent_background = true,
-            dim_inactive = {
-                enabled = false, -- dims the background color of inactive window
-                shade = "dark",
-                percentage = 0.15, -- percentage of the shade to apply to the inactive window
-            },
-            integrations = {
-                cmp = true,
-                gitsigns = true,
-                treesitter = true,
-                harpoon = true,
-                telescope = true,
-                mason = true,
-                noice = true,
-                notify = true,
-                which_key = true,
-                fidget = true,
-                native_lsp = {
-                    enabled = true,
-                    virtual_text = {
-                        errors = { "italic" },
-                        hints = { "italic" },
-                        warnings = { "italic" },
-                        information = { "italic" },
-                    },
-                    underlines = {
-                        errors = { "underline" },
-                        hints = { "underline" },
-                        warnings = { "underline" },
-                        information = { "underline" },
-                    },
-                    inlay_hints = {
-                        background = true,
-                    },
-                },
-                mini = {
-                    enabled = true,
-                    indentscope_color = "",
-                },
+            transparent_mode = true,
+        }
+    },
+
+    {
+        "rose-pine/neovim",
+        name = "rose-pine",
+        variant = "auto",
+        opts = {
+            styles = {
+                transparency = true,
             },
         },
-        config = function(_, opts)
-            require("catppuccin").setup(opts)
-            vim.cmd.colorscheme("catppuccin-mocha")
-        end,
     },
+
     {
         "LazyVim/LazyVim",
+
         opts = {
             colorscheme = "tokyonight",
         },
+        -- init = function()
+        --     require("config.theme").setup()
+        -- end,
     },
 }

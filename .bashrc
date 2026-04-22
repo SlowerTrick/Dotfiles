@@ -29,4 +29,3 @@ alias wlogout='wlogout -b 4'
 alias config-hyprland='nvim ~/.config/hypr/components/'
 eval "$(starship init bash)"
 PS1='[\u@\h \W]\$ '
-

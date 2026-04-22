@@ -31,8 +31,19 @@ vim.lsp.config("lua_ls", {
     settings = {
         Lua = {
             diagnostics = {
-                globals = { "vim" }
-            }
-        }
-    }
+                globals = { "vim" },
+            },
+        },
+    },
 })
+
+-- vim.api.nvim_create_autocmd("VimEnter", {
+--     callback = function()
+--         local ok, theme_sync = pcall(require, "config.theme")
+--         if ok then
+--             theme_sync.setup()
+--         else
+--             vim.notify("Erro ao carregar config.theme", vim.log.levels.ERROR)
+--         end
+--     end,
+-- })

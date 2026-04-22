@@ -1,23 +1,12 @@
 return {
-  "snacks.nvim",
-  opts = {
-    dashboard = {
-      preset = {
-        pick = function(cmd, opts)
-          return LazyVim.pick(cmd, opts)()
-        end,
-        header = [[
-⠀⠀⠀⠀⠀⡈⣀⡴⢧⣀⠀⠀⣀⣠⠤⠤⠤⠤⣄⣀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠘⠏⢀⡴⠊⠁⠀⠄⠀⠀⠀⠀⠈⠙⠢⡀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⣰⠋⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⠘⢶⣶⣒⡶⠦⣠⣀⠀
-⠀⠀⠀⠀⠀⠀⢀⣰⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠀⠀⠈⣟⠲⡎⠙⢦⠈⢧
-⠀⠀⠀⣠⢴⡾⢟⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⡰⢃⡠⠋⣠⠋
-⠐⠀⠞⣱⠋⢰⠁⢿⠀⠀⠀⠀⠄⢂⠀⠀⠀⠀⠀⣀⣠⠠⢖⣋⡥⢖⣩⠔⠊⠀⠀
-⠈⠠⡀⠹⢤⣈⣙⠚⠶⠤⠤⠤⠴⠶⣒⣒⣚⣨⠭⢵⣒⣩⠬⢖⠏⠁⢀⣀⠀⠀⠀
-⠀⠀⠈⠓⠒⠦⠍⠭⠭⣭⠭⠭⠭⠭⡿⡓⠒⠛⠉⠉⠀⠀⣠⠇⠀⠀⠘⠞⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠓⢤⣀⠀⠁⠀⠀⠀⠀⣀⡤⠞⠁⠀⣰⣆⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠿⠀⠀⠀⠀⠀⠉⠉⠙⠒⠒⠚⠉⠁⠀⠀⠀⠁⢣⡎⠁⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    "snacks.nvim",
+    opts = {
+        dashboard = {
+            preset = {
+                pick = function(cmd, opts)
+                    return LazyVim.pick(cmd, opts)()
+                end,
+                header = [[
 ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗
 ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║
 ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║
@@ -25,21 +14,22 @@ return {
 ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║
 ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝
 ]],
-        -- stylua: ignore
-        ---@type snacks.dashboard.Item[]
-        keys = {
-          { icon = " ", key = "p", desc = "Projects", action = ":lua Snacks.picker.projects()" },
-          { icon = " ", key = "s", desc = "Restore Session", section = "session" },
-          { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
-          { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
-          { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
-          { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy" },
-          { icon = " ", key = "x", desc = "Lazy Extras", action = ":LazyExtras" },
-          { icon = " ", key = "q", desc = "Quit", action = ":qa" },
+                -- stylua: ignore
+                ---@type snacks.dashboard.Item[]
+                keys = {
+                    { icon = " ", key = "p", desc = "Projects", action = ":lua Snacks.picker.projects()" },
+                    { icon = " ", key = "s", desc = "Restore Session", section = "session" },
+                    { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
+                    { icon = " ", key = "g", desc = "Find Text", action = ':lua LazyVim.pick("live_grep")()' },
+                    { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
+                    { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
+                    { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy" },
+                    { icon = " ", key = "x", desc = "Lazy Extras", action = ":LazyExtras" },
+                    { icon = " ", key = "q", desc = "Quit", action = ":qa" },
+                },
+            },
         },
-      },
     },
-  },
 }
 --⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠶⢖⠒⡆⠤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 --⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⠠⣤⡵⠬⠤⠬⣱⡤⠤⢤⠔⠒⠒⠤⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀

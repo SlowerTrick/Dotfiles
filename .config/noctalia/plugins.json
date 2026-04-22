@@ -7,12 +7,24 @@
         }
     ],
     "states": {
-        "catwalk": {
+        "arch-updater": {
+            "enabled": true,
+            "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
+        },
+        "giphy-search": {
             "enabled": true,
             "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
         },
         "keybind-cheatsheet": {
             "enabled": true,
+            "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
+        },
+        "linux-wallpaperengine-controller": {
+            "enabled": false,
+            "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
+        },
+        "network-manager-vpn": {
+            "enabled": false,
             "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
         },
         "parallax-wallpaper": {
@@ -31,6 +43,14 @@
             "enabled": true,
             "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
         },
+        "screen-toolkit": {
+            "enabled": true,
+            "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
+        },
+        "show-keys": {
+            "enabled": false,
+            "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
+        },
         "timer": {
             "enabled": true,
             "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
@@ -47,11 +67,15 @@
             "enabled": true,
             "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
         },
-        "update-count": {
-            "enabled": true,
+        "video-wallpaper": {
+            "enabled": false,
             "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
         },
-        "video-wallpaper": {
+        "wallcards": {
+            "enabled": false,
+            "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
+        },
+        "workspace-overview": {
             "enabled": false,
             "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
         }

@@ -1,9 +1,16 @@
 {
-  "thumbCacheReady": true,
-  "enabled": false,
+  "activeBackend": "qt6-multimedia",
+  "automationMode": "random",
+  "automationTime": 300,
+  "fillMode": "fit",
+  "mpvSocket": "/tmp/mpv-socket",
+  "profile": "default",
+  "volume": 1,
   "wallpapersFolder": "/home/slower/Videos/walls",
+  "thumbCacheReady": true,
+  "enabled": true,
   "HDMI-A-1": {
-    "currentWallpaper": "/home/slower/Videos/walls/SG.mp4",
+    "currentWallpaper": "/home/slower/Videos/walls/Hand Hold Snow.mp4",
     "noctaliaWallpaper": "/home/slower/Pictures/Wallpapers/yellow1.png",
     "isPlaying": true,
     "volume": 1,
@@ -16,8 +23,6 @@
     "orientation": 0,
     "isMuted": true
   },
-  "activeBackend": "qt6-multimedia",
   "monitorSpecific": false,
-  "automationCustomTime": [],
-  "mpvSocket": "/tmp/mpv-socket"
+  "automationCustomTime": []
 }

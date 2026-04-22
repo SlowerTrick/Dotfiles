@@ -1,0 +1,26 @@
+{
+  "colorHistory": [],
+  "paletteColors": [
+    "#494A36",
+    "#768863",
+    "#8F8F71",
+    "#A7AD99",
+    "#C4DCAB",
+    "#ECD5D7",
+    "#E1F3CF",
+    "#FFFFFF"
+  ],
+  "installedLangs": [
+    "eng"
+  ],
+  "transAvailable": true,
+  "selectedOcrLang": "eng",
+  "screenshotPath": "",
+  "videoPath": "",
+  "filenameFormat": "",
+  "detectedRecorder": "wf-recorder",
+  "detectedCompositor": "hyprland",
+  "stateIsRunning": false,
+  "stateActiveTool": "",
+  "stateMirrorVisible": false
+}

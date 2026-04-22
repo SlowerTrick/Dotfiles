@@ -2,6 +2,7 @@ return {
     "folke/which-key.nvim",
     opts = {
         spec = {
+            sort = {"case"},
             {
                 "<leader><space>",
                 function()
@@ -26,6 +27,26 @@ return {
                     })
                 end,
                 desc = "Explorer Snacks (cwd)",
+            },
+            {
+                "<leader>y",
+                desc = "Yazi",
+                icon = "󰇥",
+            },
+            {
+                "<leader>cy",
+                desc = "Yazi (cwd)",
+                icon = "󰇥",
+            },
+            {
+                "<leader>K",
+                hidden = true,
+            },
+            {
+                "<leader>cD",
+                ":cd %:p:h<CR>:pwd<CR>",
+                desc = "Change (CWD) to the current file",
+                icon = "",
             },
         },
     },

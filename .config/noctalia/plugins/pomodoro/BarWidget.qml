@@ -101,7 +101,7 @@ Item {
           if (mainInstance && (mainInstance.pomodoroRunning || mainInstance.pomodoroSoundPlaying)) {
             return Color.mPrimary
           }
-          return mouseArea.containsMouse ? Color.mOnHover : Color.mOnSurface
+          return mouseArea.containsMouse ? Color.mOnHover : Color.mPrimary
         }
       }
     }
