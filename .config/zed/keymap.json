@@ -7,7 +7,7 @@
 // from the command palette.
 [
   {
-    "context": "Workspace",
+    "context": "!Editor",
     "bindings": {
       // Toggle left dock (Project Panel)
       "space e": "workspace::ToggleLeftDock",
@@ -18,14 +18,28 @@
       "alt-S": "zed::OpenSettingsFile",
       "alt-K": "zed::OpenKeymapFile",
 
-      // Pane navigation (directional focus between splits and docks)
+      // Pane navigation
       "space h": "workspace::ActivatePaneLeft",
       "space l": "workspace::ActivatePaneRight",
-    },
+
+      // Menu list navigation
+      "j": "menu::SelectNext",
+      "k": "menu::SelectPrevious"
+    }
   },
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
+      // Global workspace actions mapped for Vim normal mode
+      "space e": "workspace::ToggleLeftDock",
+      "space h": "workspace::ActivatePaneLeft",
+      "space l": "workspace::ActivatePaneRight",
+      "escape": "workspace::CloseActiveDock",
+      "alt-s": "zed::OpenSettings",
+      "alt-k": "zed::OpenKeymap",
+      "alt-S": "zed::OpenSettingsFile",
+      "alt-K": "zed::OpenKeymapFile",
+
       // LSP actions
       "space i": "editor::OrganizeImports",
       "space f": "editor::Format",
@@ -33,13 +47,20 @@
       "space k": "editor::GoToPreviousDiagnostic",
       "space b": "outline::Toggle",
 
-      // Tab / Buffer cycling
+      // Tab / Buffer cycling and closing
       "shift-h": "pane::ActivatePreviousItem",
       "shift-l": "pane::ActivateNextItem",
       "space w": "pane::CloseActiveItem",
       "space r": "pane::CloseOtherItems",
 
-      // Delete/Change without overriding default register (black hole "_ equivalent)
+      // Command palette
+      "space p": "command_palette::Toggle",
+
+      // Run task
+      "space t t": "task::Spawn",
+      "space t r": "task::Rerun",
+
+      // Delete without overriding default register (black hole "_ equivalent)
       "x": ["workspace::SendKeystrokes", "\" _ x"],
       "space d": ["workspace::SendKeystrokes", "\" _ d"],
 
@@ -50,34 +71,19 @@
       // Search navigation and center cursor (zzzv)
       "n": ["workspace::SendKeystrokes", "n z z z v"],
       "N": ["workspace::SendKeystrokes", "N z z z v"],
-    },
-  },
-  {
-    "context": "Editor && vim_mode == visual",
-    "bindings": {
-      // Visual delete/change without register pollution
-      "space d": ["workspace::SendKeystrokes", "\" _ d"],
-    },
-  },
-  {
-    "context": "Editor",
-    "bindings": {
-      // Command palette
-      "space p": "command_palette::Toggle",
 
       // Code folding
       "z c": "editor::Fold",
       "z o": "editor::UnfoldLines",
       "z C": "editor::FoldAll",
-      "z O": "editor::UnfoldAll",
-    },
+      "z O": "editor::UnfoldAll"
+    }
   },
   {
-    "context": "!Editor",
+    "context": "Editor && vim_mode == visual",
     "bindings": {
-      // Menu list navigation
-      "j": "menu::SelectNext",
-      "k": "menu::SelectPrevious",
-    },
+      // Visual delete without register pollution
+      "space d": ["workspace::SendKeystrokes", "\" _ d"]
+    }
   },
 ]

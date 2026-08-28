@@ -8,6 +8,7 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   // Git integration settings
+  "show_edit_predictions": true,
   "proxy": "",
   "disable_ai": false,
   "bottom_dock_layout": "contained",
@@ -138,7 +139,7 @@
     "model_parameters": []
   },
 
-  // Enable key binding hints popup (which-key)
+  // Enable key binding hints popup
   "which_key": {
     "delay_ms": 0,
     "enabled": true
@@ -147,7 +148,7 @@
   // Autosave after 1 second of inactivity
   "autosave": {
     "after_delay": {
-      "milliseconds": 1000
+      "milliseconds": 100
     }
   },
 
@@ -170,14 +171,14 @@
   "ui_font_size": 16,
   "buffer_font_size": 15,
 
-  // Theme configuration (switches based on OS color scheme)
+  // Theme configuration
   "theme": {
     "mode": "system",
     "light": "Ayu Light",
     "dark": "Aura Dark"
   },
 
-  // UI clutter reduction (minimalist appearance)
+  // UI clutter reduction
   "title_bar": {
     "show_onboarding_banner": true,
     "show_branch_status_icon": false,
@@ -198,5 +199,5 @@
   // Disable contextual ligatures/alternates in code font
   "buffer_font_features": {
     "calt": false
-  }
+  },
 }
