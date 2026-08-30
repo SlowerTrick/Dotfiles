@@ -1,13 +1,20 @@
-
 return {
     {
-        "hrsh7th/nvim-cmp",
-        opts = function(_, opts)
-            local cmp = require("cmp")
-
-            opts.sources = cmp.config.sources({
-                { name = "luasnip", priority = 1000 },
-            })
-        end,
+        "saghen/blink.cmp",
+        opts = {
+            keymap = {
+                preset = "super-tab",
+            },
+            completion = {
+                list = {
+                    selection = {
+                        preselect = function(ctx)
+                            return not require("blink.cmp").snippet_active({ direction = 1 })
+                        end,
+                        auto_insert = true,
+                    },
+                },
+            },
+        },
     },
 }

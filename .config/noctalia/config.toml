@@ -1,5 +1,3 @@
-config_version = 12
-
 [audio]
 enable_sounds = true
 
@@ -21,7 +19,7 @@ end = [
 ]
 icon_color = "primary"
 margin_ends = 0
-start = [ "launcher", "wallpaper", "workspaces", "cpu", "ram", "temp", "media", "keybinds" ]
+start = [ "launcher", "wallpaper", "workspaces", "cpu", "ram", "temp", "media" ]
 
 [calendar]
 enabled = true
@@ -53,8 +51,32 @@ show_dots = true
 [hooks]
 wallpaper_changed = "/home/slower/.config/scripts/setup_colors.sh $NOCTALIA_WALLPAPER_PATH"
 
+[hot_corners]
+enabled = true
+
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 600.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = false
+    timeout = 900.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 660.0
+
 [location]
 auto_locate = true
+
+[lockscreen]
+blur_intensity = 0.15
 
 [lockscreen_widgets]
 enabled = true
@@ -72,6 +94,8 @@ widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-widget-00000000000
     cx = 683.0
     cy = 403.0
     output = "HDMI-A-1"
+    placement_height = 768.0
+    placement_width = 1366.0
     rotation = 0.0
     type = "login_box"
 
@@ -82,9 +106,14 @@ widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-widget-00000000000
         center_password_text = false
         input_opacity = 1.0
         input_radius = 6.0
+        layout = "regular"
         show_caps_lock = true
         show_keyboard_layout = true
         show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
     box_height = 0.0
@@ -92,8 +121,13 @@ widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-widget-00000000000
     cx = 553.0
     cy = 283.5
     output = "HDMI-A-1"
+    placement_height = 768.0
+    placement_width = 1366.0
     rotation = 0.0
     type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        clock_style = "digital"
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
     box_height = 0.0
@@ -108,6 +142,20 @@ widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-widget-00000000000
         bands = 32
         show_when_idle = true
 
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000003]
+    box_height = 128.0
+    box_width = 224.0
+    cx = 907.0
+    cy = 215.0
+    output = "HDMI-A-1"
+    placement_height = 768.0
+    placement_width = 1366.0
+    rotation = 0.0
+    type = "fancy_audio_visualizer"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000003.settings]
+        background = false
+
 [nightlight]
 enabled = true
 temperature_day = 6600
@@ -116,13 +164,19 @@ temperature_night = 5200
 [osd.kinds]
 media = false
 
+[plugin_settings."noctalia/notes"]
+panel_placement = "attached"
+
+[plugin_settings."yuuto/arch-updater"]
+panel_placement = "floating"
+show_activity_graph = true
+
 [plugins]
 enabled = [
     "noctalia/translator",
     "noctalia/notes",
     "yuuto/arch-updater",
     "kenn/keybind-cheatsheet",
-    "icefish/phone-connect",
     "thepunkoff/pomodoro",
     "weinguyen/procmon",
     "alexander/screen-toolkit"
@@ -140,10 +194,10 @@ enabled = [
 
 [shell]
 clipboard_auto_paste = "off"
+password_style = "random"
 screen_time_enabled = true
 
     [shell.launcher]
-    session_search = true
 
     [shell.panel]
     clipboard_position = "auto"
@@ -160,47 +214,51 @@ screen_time_enabled = true
     [shell.screenshot]
     directory = "/home/slower/Pictures/Screenshots"
 
-    [[shell.session.actions]]
-    action = "lock"
-    countdown_seconds = 0.0
-    enabled = true
-    shortcut = "1"
-    variant = "default"
+    [shell.session]
+    grid_columns = 2
 
-    [[shell.session.actions]]
-    action = "logout"
-    countdown_seconds = 0.0
-    enabled = true
-    shortcut = "2"
-    variant = "default"
+        [[shell.session.actions]]
+        action = "lock"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "1"
+        variant = "default"
 
-    [[shell.session.actions]]
-    action = "lock_and_suspend"
-    countdown_seconds = 0.0
-    enabled = true
-    shortcut = "3"
-    variant = "default"
+        [[shell.session.actions]]
+        action = "logout"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "2"
+        variant = "default"
 
-    [[shell.session.actions]]
-    action = "reboot"
-    countdown_seconds = 0.0
-    enabled = true
-    shortcut = "4"
-    variant = "default"
+        [[shell.session.actions]]
+        action = "lock_and_suspend"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "3"
+        variant = "default"
 
-    [[shell.session.actions]]
-    action = "shutdown"
-    countdown_seconds = 0.0
-    enabled = true
-    shortcut = "5"
-    variant = "destructive"
+        [[shell.session.actions]]
+        action = "reboot"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "4"
+        variant = "default"
 
-    [[shell.session.actions]]
-    action = "command"
-    command = "notify-send 'Noctalia' 'Custom session entry'"
-    countdown_seconds = 0.0
-    enabled = true
-    variant = "default"
+        [[shell.session.actions]]
+        action = "shutdown"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "5"
+        variant = "destructive"
+
+        [[shell.session.actions]]
+        action = "command"
+        command = "notify-send 'Noctalia' 'Custom session entry'"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "6"
+        variant = "default"
 
 [theme]
 builtin = "Noctalia"
@@ -233,17 +291,14 @@ directory = "/home/slower/Pictures/Wallpapers"
 icon_color = "primary"
 
 [widget.clock]
+capsule_radius = "auto"
 color = "primary"
 
 [widget.control-center]
 color = "primary"
 
 [widget.cpu]
-show_label = false
 show_value = false
-
-[widget.keybinds]
-type = "kenn/keybind-cheatsheet:keybinds"
 
 [widget.launcher]
 color = "primary"
@@ -264,14 +319,12 @@ type = "noctalia/notes:notes"
 color = "primary"
 
 [widget.ram]
-show_label = false
 show_value = false
 
 [widget.session]
 color = "primary"
 
 [widget.temp]
-show_label = false
 show_value = false
 
 [widget.tray]
@@ -290,5 +343,5 @@ show_count = false
 type = "yuuto/arch-updater:widget"
 
 [widget.workspaces]
-pill_scale = 0.90000000000000002
+pill_scale = 0.9
 show_labels = false

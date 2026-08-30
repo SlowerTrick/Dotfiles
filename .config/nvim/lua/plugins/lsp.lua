@@ -51,5 +51,29 @@ return {
             },
         },
     },
+    {
+        "neovim/nvim-lspconfig",
+        opts = {
+            servers = {
+                cssls = {
+                    on_attach = function(client, bufnr)
+                        client.server_capabilities.hoverProvider = false
+                    end,
+                },
+                css_variables = {
+                    settings = {
+                        cssVariables = {
+                            lookupFiles = {
+                                "**/*.css",
+                                "**/*.scss",
+                                "**/*.sass",
+                                "**/*.less",
+                            },
+                        },
+                    },
+                },
+            },
+        },
+    },
 }
 
